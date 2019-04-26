@@ -15,7 +15,7 @@ void PotionSystem::update() {
                 if (potion->get_type() == "HealthPotion") {
                     player->get_component<Vitals>()->hp += 5;
                     player->get_component<Vitals>()->power += 100;
-                    cerr << "Ты скушал яблочко." << endl;
+                    cerr << "Вы скушали яблочко." << endl;
                     potion->remove();
                 }
                 if (potion->get_type() == "ManagerDeadPotion") {
