@@ -37,7 +37,7 @@ vector<Entity *> LevelBuilder::build() {
             player_tile->put_component(new Position(x, y, 0));
             player_tile->put_component(new Graphics('@', (char *) "black"));
             player_tile->put_component(new RigidBody(1, 100));
-            player_tile->put_component(new Vitals(100, 1000));
+            player_tile->put_component(new Vitals(150, 1000));
             entityManager.add_entity(player_tile);
             map.push_back(player_tile);
 

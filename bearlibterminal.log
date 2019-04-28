@@ -1,6 +1,6 @@
-13:08:32.479 [info] Trying to set "window.title='Don`t / Die'; log.file = '../../bearlibterminal.log'; log.level = debug"
-13:08:32.479 [debug] Group "window":
-13:08:32.479 [debug] * "title" = "Don`t / Die"
-13:08:32.479 [debug] Group "log":
-13:08:32.479 [debug] * "file" = "../../bearlibterminal.log"
-13:08:32.479 [debug] * "level" = "debug"
+08:19:27.954 [info] Trying to set "window.title='Don`t / Die'; log.file = '../../bearlibterminal.log'; log.level = debug"
+08:19:27.954 [debug] Group "window":
+08:19:27.954 [debug] * "title" = "Don`t / Die"
+08:19:27.954 [debug] Group "log":
+08:19:27.954 [debug] * "file" = "../../bearlibterminal.log"
+08:19:27.954 [debug] * "level" = "debug"

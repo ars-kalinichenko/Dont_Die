@@ -46,7 +46,7 @@ void BattleProcessingSystem::update() {
                 if (player->get_type() == "Player" &&
                     !player->get_component<Inventory>()->get_all_by_tag("TestersPotion").empty()) {
                     tester->remove();
-                    cerr << "-Спасибо! Ступай с миром и не обращай внимания на баги" << endl;
+                    cerr << "-Спасибо! Иди с миром и не обращай внимания на баги" << endl;
                     for (auto bug: entityManager->get_all_by_tag("Bug")) {
                         bug->remove();
                     }

@@ -13,7 +13,7 @@ CountersSystem::CountersSystem(EntityManager *entityManager) : entityManager(ent
 
 void CountersSystem::update() {
 
-    auto vitals = entityManager->get_all_by_tag("Player")[0]->get_component<Vitals>();
+    auto vitals = entityManager->get_all_by_tag("Player").at(0)->get_component<Vitals>();
 
 
     time_flow->update();
