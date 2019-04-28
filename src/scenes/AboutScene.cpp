@@ -16,7 +16,7 @@ void AboutScene::run() {
     auto eventLog = make_unique<EventLog>();
     auto keyboard_input_system = make_unique<KeyboardControlSystem>(eventLog.get());
 
-    terminalSystem.clear();
+    TerminalSystem::clear();
     terminal_color(color_from_name((char *) "black"));
     terminal_printf(4, 3, "Donation {F}");
     terminal_printf(4, 5, "About author {F1}");
