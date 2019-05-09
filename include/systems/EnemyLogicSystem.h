@@ -17,9 +17,9 @@ public:
 
     void update() override;
 
-    void free_movement(Entity *enemy);
+    static void free_movement(Entity *enemy);
 
-    void pursuit_movement(Entity *enemy, Position *delta);
+    static void pursuit_movement(Entity *enemy, Position *delta);
 
     ~EnemyLogicSystem() override = default;
 

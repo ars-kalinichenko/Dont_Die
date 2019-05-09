@@ -139,3 +139,6 @@ Temporary Items
 .idea
 cmake-build-debug
 build
+
+# MY
+bearlibterminal.log

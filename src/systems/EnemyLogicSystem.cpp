@@ -35,7 +35,7 @@ void EnemyLogicSystem::update() {
                     auto playerPos = player->get_component<Position>();
                     delta->x_ = playerPos->x_ - enemyPos->x_;
                     delta->y_ = playerPos->y_ - enemyPos->y_;
-                    if (deltaTime > 490) {
+                    if (deltaTime > 690) {
                         if (abs(delta->x_) < 5 && abs(delta->y_) < 4) {
                             pursuit_movement(enemy, delta);
                         } else {
@@ -46,7 +46,7 @@ void EnemyLogicSystem::update() {
             }
         }
     }
-    if (deltaTime > 510) {
+    if (deltaTime > 705) {
         start = stop;
     }
 }
@@ -74,18 +74,16 @@ void EnemyLogicSystem::pursuit_movement(Entity *enemy, Position *delta) {
     auto enemyForce = enemy->get_component<RigidBody>();
     enemyForce->force_x = 0;
     enemyForce->force_y = 0;
-    if (delta->x_ > 0) {
+    if (delta->x_ > 1) {
         enemyForce->force_x = 1;
     }
-    if (delta->x_ < 0) {
+    if (delta->x_ < -1) {
         enemyForce->force_x = -1;
     }
-    if (delta->y_ > 0) {
+    if (delta->y_ > 1) {
         enemyForce->force_y = 1;
     }
-    if (delta->y_ < 0) {
+    if (delta->y_ < -1) {
         enemyForce->force_y = -1;
     }
 }
-
-
