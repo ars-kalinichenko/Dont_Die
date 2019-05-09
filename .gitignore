@@ -140,5 +140,4 @@ Temporary Items
 cmake-build-debug
 build
 
-# MY
-bearlibterminal.log
+logs

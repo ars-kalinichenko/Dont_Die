@@ -17,7 +17,7 @@ void MenuScene::start() {
 
 void MenuScene::run() {
     TerminalSystem terminalSystem;
-    terminal_set("window.title='Don`t / Die'; log.file = '../../bearlibterminal.log'; log.level = debug");
+    terminal_set("window.title='Don`t / Die'; log.file = '../../logs/bearlibterminal.log'; log.level = debug");
     terminal_bkcolor(color_from_name((char *) "white"));
     terminalSystem.clear();
     terminal_color(color_from_name((char *) "black"));
