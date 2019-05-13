@@ -64,18 +64,6 @@ void BattleProcessingSystem::update() {
             }
         }
 
-        for (auto developer: entityManager->get_all_by_tag("MadDeveloper")) {
-            auto developerPos = developer->get_component<Position>();
-            if (abs(developerPos->x_ - playerPos->x_) < 2 && abs(developerPos->y_ - playerPos->y_) < 2) {
-                if (player->get_component<Vitals>()->power == 0) {
-                    player->get_component<Vitals>()->hp -= 30;
-                } else { player->get_component<Vitals>()->hp -= 15; }
-                if (player->get_component<Vitals>()->power >= 400) {
-                    player->get_component<Vitals>()->power -= 400;
-                } else { player->get_component<Vitals>()->power = 0; }
-                developer->remove();
-            }
-        }
     }
 
 }

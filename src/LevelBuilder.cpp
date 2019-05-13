@@ -128,14 +128,6 @@ vector<Entity *> LevelBuilder::build() {
             bug->put_component(new Graphics('b', (char *) "black"));
             map.push_back(bug);
 
-        } else if (c == '5') {
-            auto bug = new Entity("MadDeveloper");
-            bug->put_component(new Collider());
-            bug->put_component(new Position(x, y, 0));
-            bug->put_component(new RigidBody(10000, 100000));
-            bug->put_component(new EnemyBehaviour(new Position(1, 1, 0)));
-            bug->put_component(new Graphics('d', (char *) "black"));
-            map.push_back(bug);
         } else {
             if (c != 10 && c != 32) {
                 auto tile = new Entity("Tile");

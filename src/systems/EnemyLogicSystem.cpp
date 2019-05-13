@@ -21,8 +21,7 @@ void EnemyLogicSystem::update() {
     auto deltaTime = chrono::duration_cast<chrono::milliseconds>(stop - start).count();
 
     for (auto enemy: entityManager->get_all()) {
-        if (enemy->get_type() == "Manager" || enemy->get_type() == "Deadline" || enemy->get_type() == "Bug" ||
-            enemy->get_type() == "MadDeveloper") {
+        if (enemy->get_type() == "Manager" || enemy->get_type() == "Deadline" || enemy->get_type() == "Bug") {
             if (enemy->has_component<Position>()) {
                 auto enemyPos = enemy->get_component<Position>();
 
