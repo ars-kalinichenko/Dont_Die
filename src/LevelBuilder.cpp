@@ -35,7 +35,7 @@ vector<Entity *> LevelBuilder::build() {
             player_tile->put_component(new Collider());
             player_tile->put_component(new Inventory());
             player_tile->put_component(new Position(x, y, 0));
-            player_tile->put_component(new Graphics('@', (char *) "black"));
+            player_tile->put_component(new Graphics('@', const_cast<char *> ("black")));
             player_tile->put_component(new RigidBody(1, 100));
             player_tile->put_component(new Vitals(200, 2000));
             entityManager.add_entity(player_tile);
@@ -49,7 +49,7 @@ vector<Entity *> LevelBuilder::build() {
             auto wall = new Entity("Wall");
             wall->put_component(new Collider());
             wall->put_component(new Position(x, y, 0));
-            wall->put_component(new Graphics(L'█', (char *) "black"));
+            wall->put_component(new Graphics(L'█', const_cast<char *> ("black")));
             wall->put_component(new RigidBody(1000, 10000));
             map.push_back(wall);
         } else if (c == '|') {
@@ -57,43 +57,43 @@ vector<Entity *> LevelBuilder::build() {
             door->put_component(new Collider());
             door->put_component(new RigidBody(1, 1));
             door->put_component(new Position(x, y, 0));
-            door->put_component(new Graphics(L'║', (char *) "black"));
+            door->put_component(new Graphics(L'║', const_cast<char *> ( "black")));
             map.push_back(door);
         } else if (c == '*') {
             auto star = new Entity("Star");
             star->put_component(new Collider());
             star->put_component(new Position(x, y, 0));
-            star->put_component(new Graphics(L'•', (char *) "black"));
+            star->put_component(new Graphics(L'•', const_cast<char *> ( "black")));
             map.push_back(star);
         } else if (c == '%') {
             auto manager_potion = new Entity("ManagerDeadPotion");
             manager_potion->put_component(new Collider());
             manager_potion->put_component(new Position(x, y, 0));
-            manager_potion->put_component(new Graphics(L'†', (char *) "black"));
+            manager_potion->put_component(new Graphics(L'†', const_cast<char *> ( "#0060BD")));
             map.push_back(manager_potion);
         } else if (c == '&') {
             auto deadline_potion = new Entity("DeadlineDeadPotion");
             deadline_potion->put_component(new Collider());
             deadline_potion->put_component(new Position(x, y, 0));
-            deadline_potion->put_component(new Graphics(L'‡', (char *) "black"));
+            deadline_potion->put_component(new Graphics(L'‡', const_cast<char *> ( "#0060BD")));
             map.push_back(deadline_potion);
         } else if (c == '^') {
             auto health_potion = new Entity("HealthPotion");
             health_potion->put_component(new Collider());
             health_potion->put_component(new Position(x, y, 0));
-            health_potion->put_component(new Graphics(L'ø', (char *) "black"));
+            health_potion->put_component(new Graphics(L'ø', const_cast<char *> ( "#0BA300")));
             map.push_back(health_potion);
         } else if (c == '$') {
             auto testers_potion = new Entity("TestersPotion");
             testers_potion->put_component(new Collider());
             testers_potion->put_component(new Position(x, y, 0));
-            testers_potion->put_component(new Graphics(L'¤', (char *) "black"));
+            testers_potion->put_component(new Graphics(L'¤', const_cast<char *> ( "#ED7450")));
             map.push_back(testers_potion);
         } else if (c == '-') {
             auto key = new Entity("Key");
             key->put_component(new Collider());
             key->put_component(new Position(x, y, 0));
-            key->put_component(new Graphics(L'¢', (char *) "black"));
+            key->put_component(new Graphics(L'¢', const_cast<char *> ( "#ED7450")));
             map.push_back(key);
         } else if (c == '1') {
             auto enemy = new Entity("Manager");
@@ -101,7 +101,7 @@ vector<Entity *> LevelBuilder::build() {
             enemy->put_component(new RigidBody(10000, 100000));
             enemy->put_component(new Position(x, y, 0));
             enemy->put_component(new EnemyBehaviour(direction));
-            enemy->put_component(new Graphics('M', (char *) "black"));
+            enemy->put_component(new Graphics('M', const_cast<char *> ( "#B50808")));
             enemy->put_component(new Vitals(15, 15));
             map.push_back(enemy);
         } else if (c == '2') {
@@ -117,7 +117,7 @@ vector<Entity *> LevelBuilder::build() {
             tester->put_component(new Collider());
             tester->put_component(new Position(x, y, 0));
             tester->put_component(new RigidBody(10000, 100000));
-            tester->put_component(new Graphics('T', (char *) "black"));
+            tester->put_component(new Graphics('T', const_cast<char *> ( "#2F3FC6")));
             map.push_back(tester);
         } else if (c == '4') {
             auto bug = new Entity("Bug");
@@ -125,7 +125,7 @@ vector<Entity *> LevelBuilder::build() {
             bug->put_component(new Position(x, y, 0));
             bug->put_component(new RigidBody(10000, 100000));
             bug->put_component(new EnemyBehaviour(new Position(1, 0, 0)));
-            bug->put_component(new Graphics('b', (char *) "black"));
+            bug->put_component(new Graphics('b', const_cast<char *> ( "#B8005B")));
             map.push_back(bug);
 
         } else {
@@ -134,7 +134,7 @@ vector<Entity *> LevelBuilder::build() {
                 tile->put_component(new Collider());
                 tile->put_component(new Position(x, y, 0));
                 tile->put_component(new RigidBody(10, 10));
-                tile->put_component(new Graphics(c, (char *) "black"));
+                tile->put_component(new Graphics(c, const_cast<char *> ( "black")));
                 map.push_back(tile);
             }
         }

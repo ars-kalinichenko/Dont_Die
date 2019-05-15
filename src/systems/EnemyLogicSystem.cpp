@@ -68,7 +68,7 @@ void EnemyLogicSystem::free_movement(Entity *enemy) {
 
 void EnemyLogicSystem::pursuit_movement(Entity *enemy, Position *delta) {
     if (!enemy->has_component<Graphics>()) {
-        enemy->put_component(new Graphics('D', (char *) "black"));
+        enemy->put_component(new Graphics('D', const_cast<char*> ("#751100")));
     }
     auto enemyForce = enemy->get_component<RigidBody>();
     enemyForce->force_x = 0;
