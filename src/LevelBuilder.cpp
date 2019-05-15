@@ -101,7 +101,7 @@ vector<Entity *> LevelBuilder::build() {
             enemy->put_component(new RigidBody(10000, 100000));
             enemy->put_component(new Position(x, y, 0));
             enemy->put_component(new EnemyBehaviour(direction));
-            enemy->put_component(new Graphics('M', const_cast<char *> ( "#B50808")));
+            enemy->put_component(new Graphics(294, const_cast<char *> ( "#B50808")));
             enemy->put_component(new Vitals(15, 15));
             map.push_back(enemy);
         } else if (c == '2') {
